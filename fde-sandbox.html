@@ -70,7 +70,7 @@ const PAYMENTS = [
 function summarize(payments) {
   const buckets = {};
   for (const p of payments) {
-    const day = new Date(p.ts).toISOString().slice(0, 10);
+    const day = p.ts.slice(0, 10);
     if (!buckets[day]) buckets[day] = { count: 0, total: 0 };
     buckets[day].count += 1;
     buckets[day].total += p.amount;
